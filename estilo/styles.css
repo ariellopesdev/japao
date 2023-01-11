@@ -8,7 +8,12 @@
 /*Boot CSS*/
 
 body{
-    background-color: black;
+    position: relative;
+    z-index: -1;
+    background-image: url("../images/background.jpg");
+    background-position: center;
+    background-repeat:no-repeat;
+    background-size: cover;
 }
 .center {
     max-width: 1280px;
@@ -16,8 +21,7 @@ body{
     margin: 0 auto;
 }
 .w25{
-    width: 25px;
-    padding: 0 10%;
+    width: 25%;
 }
 .w50{
     width: 50%;
@@ -63,6 +67,7 @@ header i.fa-search{
     background-color: transparent;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
+    border: none;
     color: white;
 }
 header ul{
@@ -80,7 +85,6 @@ header ul li{
     line-height: 36px;
     font-size: 18px;
 }
-
 header ul li a{
     text-decoration: none;
     color: white;
@@ -99,12 +103,13 @@ header div.pesquisa{
     position: relative;
     top: 12px;
     border-radius: 20px;
-    border: 1px solid gray;
+    border: 1px solid white;
 }
 header input{
     background-color: transparent;
     width: 70%;
     height:100%;
+    border: none;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     font-size: 18px;
@@ -123,25 +128,54 @@ header button{
     font-size: 18px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 main.japan{
-    background-color: green;
+    height: 550px;
+}
+main.japan div.name{
+    height: 385px;
+}
+main.japan div.name h1{
+    text-align: center;
+    font-size: 170px;
+    font-family:'Lucida Sans', Verdana, sans-serif;
+    color: white;
+}
+main.japan div.name h2{
+    padding-top: 50px;
+    text-align: center;
+    font-size: 40px;
+    color: white;
+}
+main.japan div.cities{
+    height: 165px;
+    display: block;
+}
+main.japan div.cities figure{
+    height: 100%;
+}
+main.japan div.cities figure .img_cities{
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+    margin-top: 40px;
+    margin-left: 50px;
+    border-style: 1px dashed white;
+}
+main.japan div.cities figure div.comment{
+    margin-left: 15px;
+    margin-top: 40px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+}
+main.japan div.cities figure h3{
+    font-size:25px;
+    color: white;
+}
+main.japan div.cities figure h4{
+    font-size: 15px;
+    color: white;
 }
 main.description{
     background-color: blue;
