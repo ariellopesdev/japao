@@ -6,14 +6,23 @@
 }
 
 /*Boot CSS*/
-
-body{
+div.overlay{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: rgba(0,0 ,0, 0.7);
+}
+div.background{
+    height: 100vh;
     position: relative;
-    z-index: -1;
+    z-index: 1;
     background-image: url("../images/background.jpg");
-    background-position: center;
+    background-position:center;
     background-repeat:no-repeat;
-    background-size: cover;
+    background-size: 100%;
 }
 .center {
     max-width: 1280px;
@@ -46,12 +55,14 @@ body{
 header{
     background-color: transparent;
     width: 100%;
-    height: 60px;
+    height: 70px;
+    position: relative;
+    z-index: 3;
 }
 header i.fa-instagram{
     width: 5%;
     position: relative;
-    top: 12px;
+    top: 17px;
     font-size:36px;
     text-align: center;
     line-height: 36px;
@@ -75,9 +86,9 @@ header ul{
     display: flex;
     flex-direction: row;
     height: 36px;
-    width: 35%;
+    width: 30%;
     list-style: none;
-    margin-top: 12px;
+    margin-top: 17px;
 }
 header ul li{
     width: 100%;
@@ -97,11 +108,12 @@ header ul li a:visited{
     text-decoration:none;
 }
 header div.pesquisa{
+    left: 20px;
     background-color: transparent;
     width: 20%;
     height: 36px;
     position: relative;
-    top: 12px;
+    top: 17px;
     border-radius: 20px;
     border: 1px solid white;
 }
@@ -115,12 +127,15 @@ header input{
     font-size: 18px;
     padding-left: 15px;
 }
+header input:focus{
+    border: none;
+}
 header button{
     background-color:red;
     width: 15%;
     height: 40px;
     position: relative;
-    top: 10px;
+    top: 15px;
     right: 20px;
     border: none;
     border-radius: 20px;
@@ -129,7 +144,9 @@ header button{
 }
 
 main.japan{
-    height: 550px;
+    height: calc(100% - 60px);
+    position: relative;
+    z-index: 3;
 }
 main.japan div.name{
     height: 385px;
@@ -170,17 +187,116 @@ main.japan div.cities figure div.comment{
     justify-content:center;
 }
 main.japan div.cities figure h3{
-    font-size:25px;
+    font-size:22px;
     color: white;
 }
 main.japan div.cities figure h4{
     font-size: 15px;
     color: white;
 }
+
+
 main.description{
-    background-color: blue;
+    height: 100vh;
+    background-color: black;
+}
+main.description article.image{
+    height: 100vh;
+    padding: 0;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+main.description article.image img{
+    width: 300px;
+    height: 540px;
+}
+
+
+
+
+main.description article.box-description{
+    height: 100vh;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center; 
+}
+main.description article.box-description h2{
+    color: red;
+    width: 80%;
+    font-size: 18px;
+    margin-bottom: 10px;
+    padding: 0 30px;
+}
+main.description article.box-description h1{
+    color: white;
+    width: 80%;
+    font-size: 30px;
+    margin-bottom: 40px;
+    padding: 0 30px;
+}
+main.description article.box-description p{
+    color: white;
+    width: 80%;
+    text-align: justify;
+    margin-bottom: 40px;
+    padding: 0 30px;
+    border-right: 1px solid red;
+    font-size: 15px;
+}
+main.description article.box-description ul{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    padding: 0 30px;
+    list-style: none;
+    margin-bottom: 40px;
+}
+main.description article.box-description ul li{
+    width: 100%;
+    text-align: center;
+    line-height: 36px;
+    font-size: 18px;
+}
+main.description article.box-description ul li a{
+    text-decoration: none;
+    border-bottom: 1px solid white;
+}
+main.description article.box-description ul li a:hover{
+    color: red;
+    cursor: pointer;
+    border-bottom: 1px solid red;
+}
+main.description article.box-description ul li a:visited{
+    text-decoration:none;
+    color: white;
+}
+main.description article.box-description button{
+    background-color:red;
+    width: 150px;
+    height: 40px;
+    position: relative;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-size: 18px;
 }
 footer{
-    background-color: yellow;
+    background-color: rgb(41, 41, 41);
+    height: 10vh;
 }
+footer h1{
+    line-height: 10vh;
+    text-align: center;
+    font-size: 16px;
+    color: white;
+}
+footer i.fa-copyright{
+    color: red;
+}
+
+
+
 
