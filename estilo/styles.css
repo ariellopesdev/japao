@@ -2,10 +2,21 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;/*Facilita no responsivo*/
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+*:before, *:after{
+    box-sizing: border-box;
 }
 
 /*Boot CSS*/
+
+body{
+    height: 100%;
+    overflow-x: hidden;
+}
+html{
+    -webkit-font-smoothing: antialiased;
+}
 div.overlay{
     position: absolute;
     left: 0;
@@ -20,9 +31,9 @@ div.background{
     position: relative;
     z-index: 1;
     background-image: url("../images/background.jpg");
-    background-position:center;
-    background-repeat:no-repeat;
-    background-size: 100%;
+    background-position:center; 
+    background-repeat:no-repeat; 
+    background-size: 100% 100%;
 }
 .center {
     max-width: 1280px;
@@ -110,7 +121,7 @@ header ul li a:visited{
 header div.pesquisa{
     left: 20px;
     background-color: transparent;
-    width: 20%;
+    width: 18%;
     height: 36px;
     position: relative;
     top: 17px;
@@ -153,7 +164,7 @@ main.japan div.name{
 }
 main.japan div.name h1{
     text-align: center;
-    font-size: 170px;
+    font-size: 150px;
     font-family:'Lucida Sans', Verdana, sans-serif;
     color: white;
 }
@@ -163,24 +174,31 @@ main.japan div.name h2{
     font-size: 40px;
     color: white;
 }
+main.japan div.box-cities{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items:center;
+}
 main.japan div.cities{
+    width: 80%;
     height: 165px;
-    display: block;
 }
 main.japan div.cities figure{
     height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items:center;
 }
 main.japan div.cities figure .img_cities{
     width: 60px;
     height: 60px;
     border-radius: 60px;
-    margin-top: 40px;
-    margin-left: 50px;
-    border-style: 1px dashed white;
+    border: 1px dotted white;
 }
 main.japan div.cities figure div.comment{
-    margin-left: 15px;
-    margin-top: 40px;
+    margin-left: 20px;
     height: 60px;
     display: flex;
     flex-direction: column;
@@ -213,65 +231,70 @@ main.description article.image img{
 }
 
 
-
-
-main.description article.box-description{
+main.description div.container-description{
     height: 100vh;
     padding: 0;
     display: flex;
     flex-direction: column;
     justify-content:center;
-    align-items:center; 
+}
+
+main.description article.box-description{
+    width: 90%;
+    border-right: 2px solid red;
 }
 main.description article.box-description h2{
     color: red;
-    width: 80%;
+    width: 90%;
     font-size: 18px;
     margin-bottom: 10px;
     padding: 0 30px;
 }
 main.description article.box-description h1{
     color: white;
-    width: 80%;
+    width: 90%;
     font-size: 30px;
     margin-bottom: 40px;
     padding: 0 30px;
 }
 main.description article.box-description p{
     color: white;
-    width: 80%;
-    text-align: justify;
+    width: 90%;
+    text-align:left;
     margin-bottom: 40px;
     padding: 0 30px;
-    border-right: 1px solid red;
     font-size: 15px;
 }
 main.description article.box-description ul{
     display: flex;
     flex-direction: row;
-    width: 80%;
-    padding: 0 30px;
+    height: 36px;
+    width: 90%;
     list-style: none;
     margin-bottom: 40px;
 }
 main.description article.box-description ul li{
     width: 100%;
-    text-align: center;
-    line-height: 36px;
-    font-size: 18px;
+    height: 36px;
 }
 main.description article.box-description ul li a{
+    margin: 0 30px;
+    line-height: 36px;
+    font-size: 16px;
     text-decoration: none;
+    padding-bottom: 9px;
     border-bottom: 1px solid white;
+
 }
 main.description article.box-description ul li a:hover{
-    color: red;
+    color: red !important;
     cursor: pointer;
-    border-bottom: 1px solid red;
+    padding-bottom: 9px;
+    border-bottom: 2px solid red;
 }
 main.description article.box-description ul li a:visited{
-    text-decoration:none;
     color: white;
+    text-decoration: none;
 }
 main.description article.box-description button{
     background-color:red;
@@ -282,6 +305,7 @@ main.description article.box-description button{
     border-radius: 20px;
     color: white;
     font-size: 18px;
+    margin: 0 26px;
 }
 footer{
     background-color: rgb(41, 41, 41);
@@ -297,6 +321,48 @@ footer i.fa-copyright{
     color: red;
 }
 
+@media screen and (max-width: 900px) {
+    div.background{
+        background-image: none;
+        background-color: black;
+    }
+    main.japan div.cities{
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items:center;
+    }
+    main.description article.box-description p{
+        width: 100%;
+        text-align:justify;
+    }
+    main.description{
+        float: none;
+        height: 100%;
+        display: flex;
+        flex-direction:column;
+        align-items:center;
+    }
+    main.description article.image{
+        width: 90%;
+        position: relative;
+        margin: 0 auto;
+    }
+    main.description div.container-description{
+        width: 90%;
+        position: relative;
+        margin: 0 auto;
+    }
+    main.description div.container-description article.box-description{
+        width: 100%;
+    }
+    main.description article.left{
+        float: none;
+    }
+    main.description div.right{
+        float: none;
+    }
+}
 
 
 
