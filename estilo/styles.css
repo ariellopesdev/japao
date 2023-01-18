@@ -12,9 +12,9 @@
 
 body{
     height: 100%;
-    overflow-x: hidden;
 }
 html{
+    height: 100%;
     -webkit-font-smoothing: antialiased;
 }
 div.overlay{
@@ -62,15 +62,18 @@ div.background{
 }
 
 /*Estilização*/
-
-header{
+header.mobile{
+    display: none;
+}
+header.desktop{
+    display: block;
     background-color: transparent;
     width: 100%;
     height: 70px;
     position: relative;
     z-index: 3;
 }
-header i.fa-instagram{
+header.desktop i.fa-instagram{
     width: 5%;
     position: relative;
     top: 17px;
@@ -80,7 +83,7 @@ header i.fa-instagram{
     color: white;
     background-color: transparent;
 }
-header i.fa-search{
+header.desktop i.fa-search{
     text-align: center;
     line-height: 36px;
     font-size: 26px;
@@ -92,7 +95,7 @@ header i.fa-search{
     border: none;
     color: white;
 }
-header ul{
+header.desktop ul{
     background-color:transparent;
     display: flex;
     flex-direction: row;
@@ -101,24 +104,24 @@ header ul{
     list-style: none;
     margin-top: 17px;
 }
-header ul li{
+header.desktop ul li{
     width: 100%;
     text-align: center;
     line-height: 36px;
     font-size: 18px;
 }
-header ul li a{
+header.desktop ul li a{
     text-decoration: none;
     color: white;
 }
-header ul li a:hover{
+header.desktop ul li a:hover{
     text-decoration: underline;
     cursor: pointer;
 }
-header ul li a:visited{
+header.desktop ul li a:visited{
     text-decoration:none;
 }
-header div.pesquisa{
+header.desktop div.pesquisa{
     left: 20px;
     background-color: transparent;
     width: 18%;
@@ -128,7 +131,7 @@ header div.pesquisa{
     border-radius: 20px;
     border: 1px solid white;
 }
-header input{
+header.desktop input{
     background-color: transparent;
     width: 70%;
     height:100%;
@@ -138,10 +141,10 @@ header input{
     font-size: 18px;
     padding-left: 15px;
 }
-header input:focus{
+header.desktop input:focus{
     border: none;
 }
-header button{
+header.desktop button{
     background-color:red;
     width: 15%;
     height: 40px;
@@ -215,7 +218,7 @@ main.japan div.cities figure h4{
 
 
 main.description{
-    height: 100vh;
+    height: 100%;
     background-color: black;
 }
 main.description article.image{
@@ -322,45 +325,124 @@ footer i.fa-copyright{
 }
 
 @media screen and (max-width: 900px) {
+    header.desktop{
+        display: none;
+    }
+    header.mobile{
+        display: block;
+        position: relative;
+        z-index: 3;
+    }
+    .botao-menu-mobile {
+        float: right;
+        width:80px;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 32px;
+        cursor: pointer;
+        color: red;
+    }
+    header.mobile ul {
+        top: 80px;
+        z-index: 4;
+        position: absolute;
+        right: 0;
+        width: 40%;
+        display: none;
+        text-align: center;
+    }
+    header.mobile ul li {
+        font-weight: 300;
+        width: 100%;
+        display: block;
+        font-size: 17px;
+        line-height: 45px;
+    }
+    header.mobile ul li a {
+        display: block;
+        color: white;
+        text-decoration: none;
+    }
+    header.mobile ul li:hover {
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+        background: rgb(114, 114, 114);
+    }
+    header.mobile ul li a:hover{
+        font-weight: bold;
+        color: white;
+        width: 100%;
+        height: 100%;
+    }
+    header.mobile i.fa-search,
+    header.mobile i.fa-instagram,
+    header.mobile input,
+    header.mobile button{
+        display: none;
+    }
     div.background{
         background-image: none;
         background-color: black;
     }
+    main.japan div.name {
+        border-left: 2px solid red;
+        /* border-left: 2px dotted red; */
+    }
+    main.japan div.name h1{
+        font-size: 80px;
+    }
+    main.japan div.name h2{
+        font-size: 22px;
+    }
+    main.japan div.name{
+        height:250px;
+    }
+    main.japan div.box-cities{
+        border-right: 2px solid red;
+    }
     main.japan div.cities{
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        height: 270px;
+        width: 100%;
+    }
+    main.japan div.cities figure{
+        width: 170px;
+        height: 120px;
+    }
+    main.description{
+        height:850px;
+    }
+    main.description article.image{
+        width: 100%;
+        height: 400px;
+        margin-top: 40px 0;
+    }
+    main.description article.image img{
+        width: 200px;
+        height: 360px;
+        -webkit-box-shadow: 2px 5px 45px 1px rgba(255,0,0,1);
+        -moz-box-shadow: 2px 5px 45px 1px rgba(255,0,0,1);
+        box-shadow: 2px 5px 45px 1px rgba(255,0,0,1);
+    }
+    main.description div.container-description{
+        width: 100%;
+        height: 450px;
+        display: flex;
         justify-content:center;
         align-items:center;
     }
-    main.description article.box-description p{
-        width: 100%;
-        text-align:justify;
+    main.japan div.cities figure .img_cities{
+        border: 1px solid white;
     }
-    main.description{
-        float: none;
-        height: 100%;
-        display: flex;
-        flex-direction:column;
-        align-items:center;
+    main.description article.box-description ul li:nth-of-type(1){
+        margin-left: 30px;
     }
-    main.description article.image{
-        width: 90%;
-        position: relative;
-        margin: 0 auto;
-    }
-    main.description div.container-description{
-        width: 90%;
-        position: relative;
-        margin: 0 auto;
-    }
-    main.description div.container-description article.box-description{
-        width: 100%;
-    }
-    main.description article.left{
-        float: none;
-    }
-    main.description div.right{
-        float: none;
+    main.description article.box-description ul li a{
+        margin: 0 10px;
     }
 }
 
